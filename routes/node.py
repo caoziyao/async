@@ -1,0 +1,50 @@
+from routes import *
+
+from models.node import Node
+from models.topic import Topic
+from models.comment import Comment
+from models.user import User
+
+# 蓝图
+main = Blueprint('node', __name__)
+
+Model = Node
+
+def test_data():
+    """
+    测试数据库
+    """
+    n = Node('name1')
+    n.save()
+    t = Topic('title')
+    # t.node_id = n.id
+    t.node = n
+    t.save()
+
+    data = Node.query.filter_by(name='name1').first()
+    print('data', data)
+    print('topic', data.topics)
+
+
+def current_user():
+    """
+    当前用户
+    session 获得 user_id
+    """
+    uid = session.get('user_id')
+    if uid is not None:
+        u = User.query.get(uid)
+        return u
+
+
+@main.route('/')
+def index():
+    # test_data()
+    ms = Model.query.all()
+    # 获得当前用户
+    u = current_user()
+    return render_template('node_index.html', node_list=ms, user=u)
+
+
+
+    
