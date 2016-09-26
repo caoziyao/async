@@ -4,6 +4,7 @@ from models.node import Node
 from models.topic import Topic
 from models.comment import Comment
 from models.user import User
+from routes.user import current_user
 
 # 蓝图
 main = Blueprint('node', __name__)
@@ -26,16 +27,6 @@ def test_data():
     print('topic', data.topics)
 
 
-def current_user():
-    """
-    当前用户
-    session 获得 user_id
-    """
-    uid = session.get('user_id')
-    if uid is not None:
-        u = User.query.get(uid)
-        return u
-
 
 @main.route('/')
 def index():
@@ -44,6 +35,7 @@ def index():
     # 获得当前用户
     u = current_user()
     return render_template('node_index.html', node_list=ms, user=u)
+    # return render_template('base.html')
 
 
 

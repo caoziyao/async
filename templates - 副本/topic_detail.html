@@ -1,19 +1,10 @@
-
-{% extends "base.html" %}
-
-{% block head %}
-	{{ super() }}
-	<title>{% block title %}{% endblock %}</title>
-{% endblock %}
-
-
-{% block body %}
-	
-	 {% block top %}
-	 	{{ super() }}
-	 {% endblock %}
-
-
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Topic detail</title>
+</head>
+<body>
         <!--id-->
         <div>
             {{t.id}} {{t.title}} {{t.content}} {{t.created_time}}
@@ -28,8 +19,5 @@
                 {{ c.comment }} at {{ c.created_time }} by {{ c.username }}
             </div>
         {% endfor %}
-
-
-{% endblock %}
-
-
+</body>
+</html>

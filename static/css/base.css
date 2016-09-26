@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0;
+    /*background-color: lightcoral;*/
+    /*border: 1px red dashed;*/
+}
+
+a {
+    text-decoration: none;
+}
+
+.clearfix:after {
+      display: block;
+      clear: both;
+      height: 0;
+      content: '\200B';
+  }
+
+
+.Top{
+    text-align: center;
+    background-color: #fff;
+    height: 44px;
+    font-size: 15px;
+    font-weight: 500;
+    background-size: 44px 44px;
+    border-bottom: 1px solid rgba(0, 0, 0, 22);
+}
+
+.top-left{
+    float: left;
+    margin-left: 70px;
+}
+
+.top-left ul img{
+    width: 104px;
+    height: 30px;
+    padding: 6px 10px;
+}
+
+.header-search{
+  width: 276px;
+  height: 28px;
+  background-size: 276px 28px;
+  /*background-image: url("../img/qbar_light.png");*/
+  /*background-repeat: no-repeat;*/
+  /*display: inline-block;*/
+  position: absolute;
+  margin: -54px 0px 2px 80px;
+}
+
+.header-search input{
+  width: 222px;
+  height: 23px;
+  margin: 20px 0px 2px 30px;
+  background-color: transparent;
+  font-size: 12px;
+  line-height: 16px;
+  border: 1px solid #dedede;
+  -webkit-border-radius: 15px;   /* Webkit browsers */
+  /*border-radius: 15px;*/
+    /*border: none; */
+    outline: none;
+}
+
+
+.top-right{
+    float: right;
+}
+
+nav.top-nav{
+    /*background: black;*/
+}
+
+a.nav-item{
+    /* 设置 inlin-block, 这样才能设置 a 的尺寸和 padding */
+    display: inline-block;
+    /*color: white;*/
+    padding: 13px 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* 鼠标移上去的时候, 设置新颜色 */
+.nav-item:hover {
+    background-color: lightskyblue;
+    color: #556;
+    /* 鼠标指针变为链接手 */
+    cursor: pointer;
+}

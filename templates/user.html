@@ -1,24 +1,128 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>user</title>
-</head>
-<body>
-    <div>
-        <form action="{{ url_for('user.login') }}" method="post">
-            <input type="text" name="username" placeholder="username">
-            <input type="text" name="password" placeholder="password">
-            <button type="submit">登录</button>
-	    </form>
 
-        <br />
+{% extends "base.html" %}
 
-        <form action="{{ url_for('user.register') }}" method="post">
-            <input type="text" name="username" placeholder="username">
-            <input type="text" name="password" placeholder="password">
-            <button type="submit">注册</button>
-	    </form>
+{% block head %}
+	{{ super() }}
+	<title>{% block title %}{% endblock %}</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+{% endblock %}
+
+
+{% block body %}
+	
+	 {% block top %}
+	 	{{ super() }}
+	 {% endblock %}
+
+
+     <div class="login-main-body">
+
+        <div class="login-header">
+            <div class="switch">
+                <a class="switch_btn_focus" href="#">登录</a>
+                <!--<a class="switch_btn" href="#">注册</a>-->
+            </div>
+        </div>
+
+        <div class="web-qr-login">
+            <div class="web_login">
+                <form action="{{ url_for('user.login') }}" method="post">
+                    <div class="web-input">
+                        <label for="username">帐号：</label>
+                        <input type="text" name="username" >
+                    </div>
+                    <div class="web-input">
+                        <label for="password">密码：</label>
+                        <input type="text" name="password" >
+                    </div>                  
+                    <div class="web-button">
+                        <button type="submit">登录</button>
+                    </div>
+                
+            </form>    
+            </div>
+
+        </div>
+
+
     </div>
-</body>
-</html>
+
+
+
+<div class="login-main-body">
+
+        <div class="login-header">
+            <div class="switch">
+                <!--<a class="switch_btn_focus" href="#">登录</a>-->
+                <a class="switch_btn" href="#">注册</a>
+            </div>
+        </div>
+
+        <div class="web-qr-login">
+            <div class="web_login">
+                <form action="{{ url_for('user.register') }}" method="post">
+                    <div class="web-input">
+                        <label for="username">帐号：</label>
+                        <input type="text" name="username" >
+                    </div>
+                    <div class="web-input">
+                        <label for="password">密码：</label>
+                        <input type="text" name="password" >
+                    </div>                  
+                    <div class="web-button">
+                        <button type="submit">注册</button>
+                    </div>
+                
+            </form>    
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+{% endblock %}
+
+
+ <div class="view-login">
+            <form action="{{ url_for('user.login') }}" method="post">
+                <div class="group-inputs">
+                    <div class="username">
+                        <input type="text" name="username" placeholder="username">
+                    </div>
+                    <div class="password">
+                        <input type="text" name="password" placeholder="password">
+                    </div>                  
+                </div>
+
+                <div class="button">
+                   <button type="submit">注册</button>
+                </div>
+                
+            </form>        
+         </div>
+
+
+            <div class="view-register">
+                <form action="{{ url_for('user.register') }}" method="post">
+                    <div class="group-inputs">
+                        <div class="username">
+                            <input type="text" name="username" placeholder="username">
+                        </div>
+                        <div class="password">
+                            <input type="text" name="password" placeholder="password">
+                        </div>                  
+                    </div>
+
+                    <div class="button">
+                        <button type="submit">注册</button>
+                    </div>
+                    
+                </form>   
+            </div>

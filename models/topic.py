@@ -20,5 +20,7 @@ class Topic(db.Model, ModelMixin):
     # foreign_keys 有时候可以省略, 比如现在...
     comments = db.relationship('Comment', backref='topic')
 
-    def __init__(self, title):
-        self.title = title
+    def __init__(self, form):
+        self.title = form.get('title', '')
+        self.content = form.get('content', '')
+        self.created_time = timestamp()

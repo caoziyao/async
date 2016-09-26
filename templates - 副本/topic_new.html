@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>new</title>
+</head>
+<body>
+    <div>
+        <form action="{{ url_for('topic.topic_new') }}" method='post'>
+            <input type="text" name="title" placeholder="title">
+            <input type="text" name="note_id" placeholder="note_id">
+            <textarea rows="10" cols="10" name="content"></textarea>
+            <button type="submit">发布</button>
+        </form>
+
+    </div>
+</body>
+</html>

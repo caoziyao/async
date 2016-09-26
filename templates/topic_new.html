@@ -1,0 +1,28 @@
+
+{% extends "base.html" %}
+
+{% block head %}
+	{{ super() }}
+	<title>{% block title %}{% endblock %}</title>
+{% endblock %}
+
+
+{% block body %}
+	
+	 {% block top %}
+	 	{{ super() }}
+	 {% endblock %}
+
+
+    <div>
+        <form action="{{ url_for('topic.topic_new') }}" method='post'>
+            <input type="text" name="title" placeholder="title">
+            <input type="text" name="note_id" placeholder="note_id">
+            <textarea rows="10" cols="10" name="content"></textarea>
+            <button type="submit">发布</button>
+        </form>
+
+    </div>
+
+
+{% endblock %}

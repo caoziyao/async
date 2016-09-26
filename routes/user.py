@@ -4,6 +4,18 @@ from models.user import User
 
 main = Blueprint('user', __name__)
 
+
+def current_user():
+    """
+    当前用户
+    session 获得 user_id
+    """
+    uid = session.get('user_id')
+    if uid is not None:
+        u = User.query.get(uid)
+        return u
+
+
 @main.route('/')
 def user():
     return render_template('user.html')
