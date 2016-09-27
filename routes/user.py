@@ -2,6 +2,7 @@ from routes import *
 
 from models.user import User
 
+
 main = Blueprint('user', __name__)
 
 
@@ -18,7 +19,49 @@ def current_user():
 
 @main.route('/')
 def user():
-    return render_template('user.html')
+    u = current_user()
+    return render_template('user.html', user=u)
+
+
+def save_setting(u, form):
+    """
+    设置用户信息
+    """
+    u.email = form.get('email', '')
+    u.signed = form.get('signed', '')
+    u.brief = form.get('brief', '')
+    u.save()
+
+
+@main.route('/setting', methods=['GET', 'POST'])
+def setting():
+    """
+    设置用户信息
+    """
+    u = current_user()
+    if request.method == 'GET':
+        return render_template('user_setting.html', user=u)
+    else:
+        # 获得数据
+        form = request.form
+        save_setting(u, form)
+        return render_template('user_setting.html', user=u)
+
+
+@main.route('/update_img', methods=['POST'])
+def update_img():
+    """
+    更新头像
+    """
+    u = current_user()
+    form = request.form
+    # print(form)
+    img = form.get('file', '')
+    img_url = '/static/img/avatar/' + img
+    u.img_url = img_url
+    u.save()
+    return render_template('user_setting.html', user=u)
+
 
 
 @main.route('/login', methods=['POST'])
@@ -49,6 +92,8 @@ def register():
     form = request.form
     # print('user', u)
     u = User(form)
+    u.img_url = url_for('static', filename='img/avatar/default.png')
+    print(u.img_url)
     u.save()
     print('注册成功')
     

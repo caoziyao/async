@@ -24,6 +24,7 @@ def test_data():
 
     data = Node.query.filter_by(name='name1').first()
     print('data', data)
+    # 自动关联 不用手动查询就有数据
     print('topic', data.topics)
 
 

@@ -1,0 +1,59 @@
+#Wrapper{
+    background-color: #e2e2e2;
+    background-image: url(/static/img/shadow_light.png);
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+    /*width: 600px;
+    height: 800px;*/
+}
+
+
+
+#wrapper-main{
+    margin: 0px 320px 0px 100px;
+    background-color: white;
+    height: 880px;
+    
+}
+
+.cell-item{
+    padding: 10px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.sep20{
+    background-color:  #e2e2e2;
+    height: 20px;
+}
+
+.box{
+    /*border-radius: 8px;*/
+}
+
+.box .inner{
+    padding: 10px 10px 10px 10px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.box .inner a{
+    display: inline-block;
+    /*font-size: 13px;*/
+    line-height: 13px;
+    padding: 5px 8px 5px 8px;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+.box .inner a:hover{
+    color: white;
+    background: black;
+}
+
+#wrapper-right{
+    background-color: white;
+    float: right;
+    width: 260px;
+    margin-top: 20px;
+    margin-right: 40px;
+}
+

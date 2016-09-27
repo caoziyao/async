@@ -15,10 +15,16 @@ def topic():
     技术话题
     """
     # 获取 http://127.0.0.1:3000/topic?id=1 中的 id
-    node_id = request.args.get('node_id')
+    u = current_user()
+    node_id = int(request.args.get('node_id'))
+    print('node id', node_id)
     ts = Node.query.filter_by(id=node_id).first()
+    if ts is None:
+        # print('t is None', ts)
+        return render_template('topic_index.html', topic_list=[], user=u)
     # print('ts', ts.topics)
-    return render_template('topic_index.html', topic_list=ts.topics)
+    # print('t isnot None', ts)
+    return render_template('topic_index.html', topic_list=ts.topics, user=u)
 
 
 @main.route('/new', methods=[ 'GET', 'POST'])
@@ -26,8 +32,8 @@ def topic_new():
     """
     创作新主题
     """
+    u = current_user()
     if request.method == 'GET':
-        u = current_user()
         if u is not None:
             return render_template('topic_new.html')
         else:
@@ -37,6 +43,9 @@ def topic_new():
         form = request.form
         print('new', form)
         t = Topic(form)
-        t.node_id = int(form.get('note_id', '1'))
+        t.node_id = int(form.get('note_id'))
+        # 外键
+        t.user_id = u.id
+        print('new save')
         t.save()
         return redirect(url_for('.topic', node_id=t.node_id))

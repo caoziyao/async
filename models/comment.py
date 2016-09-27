@@ -16,7 +16,7 @@ class Comment(db.Model, ModelMixin):
 
     # 这里要定义外键
     topic_id = db.Column(db.Integer, db.ForeignKey('topics.id'))
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    # user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
     def __init__(self, form):
         self.comment = form.get('comment', '')

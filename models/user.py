@@ -11,10 +11,15 @@ class User(db.Model, ModelMixin):
     username = db.Column(db.String())
     created_time = db.Column(db.String())
     password = db.Column(db.String())
+    email = db.Column(db.String())
+    signed = db.Column(db.String())
+    brief = db.Column(db.String())
+    img_url = db.Column(db.String())
 
     # 定义一个关系
     # foreign_keys 有时候可以省略, 比如现在...
-    comments_user = db.relationship('Comment', backref='user')
+    #comments_user = db.relationship('Comment', backref='user')
+    # topics = db.relationship('Topic', backref='user')
 
     def __init__(self, form):
         self.username = form.get('username', '')

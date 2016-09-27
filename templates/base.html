@@ -34,7 +34,7 @@
                     <a class="nav-item" href="">工作空间</a>
                     <a class="nav-item" href="">记事本</a>
                     <a class="nav-item" href="">时间轴</a>
-                    <a class="nav-item" href="">设置</a>
+                    <a class="nav-item" href="{{ url_for('user.setting') }}">设置</a>
                     <a class="nav-item" href="{{ url_for('user.user') }}">登录/注册</a>
                 </nav>
             </div>
@@ -46,13 +46,14 @@
 
     {% endblock %}
 
-    <div id="Wrapper">
-        
-    </div>
+    {% block Bottom %}
+        <div id="Bottom">
+            <strong>
+                <strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/p/7v9TEc53" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/ip" class="dark" target="_self">IP 查询</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://workspace.v2ex.com/" class="dark" target="_blank">工作空间</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/advertise" class="dark" target="_self">广告投放</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/advertise/2015.html" class="dark" target="_self">鸣谢</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/start" class="dark" target="_blank">上网首页</a> &nbsp; <span class="snow">·</span> &nbsp; 1263 人在线</strong>
+            </strong>
+        </div>
 
-    <div id="Bottom">
-        
-    </div>
+    {% endblock %}
 
     {% endblock %}
 </body>

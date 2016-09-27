@@ -5,7 +5,13 @@
     /*border: 1px red dashed;*/
 }
 
+body{
+    font-family: "Microsoft Yahei";
+    font-size: 15px;
+}
+
 a {
+    color: #555;
     text-decoration: none;
 }
 
@@ -21,7 +27,7 @@ a {
     text-align: center;
     background-color: #fff;
     height: 44px;
-    font-size: 15px;
+
     font-weight: 500;
     background-size: 44px 44px;
     border-bottom: 1px solid rgba(0, 0, 0, 22);
@@ -54,7 +60,6 @@ a {
   height: 23px;
   margin: 20px 0px 2px 30px;
   background-color: transparent;
-  font-size: 12px;
   line-height: 16px;
   border: 1px solid #dedede;
   -webkit-border-radius: 15px;   /* Webkit browsers */
@@ -88,3 +93,10 @@ a.nav-item{
     /* 鼠标指针变为链接手 */
     cursor: pointer;
 }
+
+#Bottom{
+    height: 40px;
+    /*margin-top: 20px;*/
+    background: gray;
+}
+

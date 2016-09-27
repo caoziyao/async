@@ -8,6 +8,9 @@ from routes.node import main as route_node
 from routes.topic import main as route_topic
 from routes.topic_detial import main as route_topic_detial
 from routes.user import main as route_user
+from models.node import create_node
+from models.node import Node
+
 
 app = Flask(__name__)
 db_path = 'todo.sqlite'
@@ -37,6 +40,20 @@ def register_route(app):
     app.register_blueprint(route_user, url_prefix='/user')
 
 
+def create_all():
+    """
+    创建数据库
+    """
+    with app.app_context():
+    # Extensions like Flask-SQLAlchemy now know what the "current" app
+    # is while within this block. Therefore, you can now run........
+        n = Node.query.filter_by(id=1).first()
+        # print
+        if n is None:  
+            print('n is none')
+            create_node() 
+
+
 def configure_app():
     """
     套路
@@ -48,6 +65,9 @@ def configure_app():
     db.init_app(app)
     # 蓝图注册
     register_route(app)
+    # 创建数据库
+    # create_all()
+
 
 
 def configure_manager():
@@ -65,6 +85,14 @@ def error404(e):
     自定义 404 界面
     """
     return render_template('404.html')
+
+
+# 使用的时候, 初始化数据库用
+# python app.py db init
+
+# 数据改动后, 使用下面两个命令迁移并且升级数据库
+# python app.py db migrate
+# python app.py db upgrade
 
 
 if __name__ == '__main__':

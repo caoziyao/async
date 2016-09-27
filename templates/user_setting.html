@@ -1,0 +1,35 @@
+
+{% extends "base.html" %}
+
+{% block head %}
+	{{ super() }}
+	<title>{% block title %}{% endblock %}</title>
+{% endblock %}
+
+
+{% block body %}
+	
+	 {% block top %}
+	 	{{ super() }}
+	 {% endblock %}
+
+
+     <div class="wrapper">
+         <form action="{{ url_for('user.setting') }}" method="post">
+             <label for="">用户名</label><span>{{ user.username }}</span> <br />
+             <label for="email">电子邮件</label><input type="text" name="email"> <br />
+             <label for="signed">签名</label><input type="text" name="signed"> <br />
+             <label for="brief">个人简介</label><textarea rows="10" cols="6" name="brief"></textarea> <br />
+             <button type="submit">保持设置</button>
+         </form>
+     </div>
+
+     <div class="update-img">
+         <form action="{{ url_for('user.update_img') }}" method="post">
+             <img src="{{ user.img_url }}" alt="当前图像">
+             <input type="file" name="file" accept="image/*">
+             <button type="submit">开始上传</button>
+         </form>
+     </div>
+
+{% endblock %}
