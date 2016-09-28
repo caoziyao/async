@@ -18,13 +18,13 @@ def topic():
     u = current_user()
     node_id = int(request.args.get('node_id'))
     print('node id', node_id)
-    ts = Node.query.filter_by(id=node_id).first()
-    if ts is None:
+    ns = Node.query.filter_by(id=node_id).first()
+    if ns is None:
         # print('t is None', ts)
         return render_template('topic_index.html', topic_list=[], user=u)
     # print('ts', ts.topics)
     # print('t isnot None', ts)
-    return render_template('topic_index.html', topic_list=ts.topics, user=u)
+    return render_template('topic_index.html', topic_list=ns.topics, user=u)
 
 
 @main.route('/new', methods=[ 'GET', 'POST'])

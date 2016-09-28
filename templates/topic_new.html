@@ -1,19 +1,15 @@
-
 {% extends "base.html" %}
 
-{% block head %}
-	{{ super() }}
-	<title>{% block title %}{% endblock %}</title>
-{% endblock %}
+
+	{% block title %}创建新主题{% endblock %}
 
 
-{% block body %}
-	
-	 {% block top %}
-	 	{{ super() }}
-	 {% endblock %}
+    {% block sidebar %}
+        lll
+    {% endblock %}
 
 
+	{% block content %}
     <div>
         <form action="{{ url_for('topic.topic_new') }}" method='post'>
             <input type="text" name="title" placeholder="title">
@@ -23,6 +19,5 @@
         </form>
 
     </div>
+    {% endblock %}
 
-
-{% endblock %}

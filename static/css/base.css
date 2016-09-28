@@ -94,9 +94,42 @@ a.nav-item{
     cursor: pointer;
 }
 
+#Wrapper{
+    background-color: #e2e2e2;
+    background-image: url(/static/img/shadow_light.png);
+    background-repeat: no-repeat;
+    padding-bottom: 20px;
+    /*width: 600px;
+    height: 800px;*/
+    padding-top: 25px;
+}
+
+#wrapper-main{
+    margin: 0px 380px 0px 100px;
+    background-color: white;
+    height: 880px; 
+    
+}
+
+/*.sep20{
+    background-color:  #e2e2e2;
+    height: 20px;
+}*/
+
+
+#wrapper-right{
+    background-color: white;
+    float: right;
+    width: 300px;
+    /*margin-top: 25px;*/
+    margin-right: 50px;
+}
+
+
 #Bottom{
     height: 40px;
     /*margin-top: 20px;*/
-    background: gray;
+    /*background: gray;*/
+    padding: 0 10px 0 10px;
 }
 

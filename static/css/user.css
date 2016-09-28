@@ -1,11 +1,7 @@
-body{
 
-    background: url(../img/login_background.jpg)  no-repeat;
-    
-}
 
 .login-main-body{
-    margin: 50px auto;
+    margin: 0px auto;
     /*padding: 30px 0 102px;*/
     width: 300px;
     font-size: 18px;

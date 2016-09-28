@@ -35,7 +35,8 @@ def index():
     ms = Model.query.all()
     # 获得当前用户
     u = current_user()
-    return render_template('node_index.html', node_list=ms, user=u)
+    return redirect(url_for('topic.topic', node_id=1))
+    # return render_template('node_index.html', node_list=ms, user=u)
     # return render_template('base.html')
 
 

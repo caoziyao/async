@@ -2,19 +2,18 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    {% block head %}
+
     <title>{% block title %}{% endblock %}</title>
 
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+     {% block css %}{% endblock %}
+    
     <script src="/static/js/alertify.min.js"></script>
     <script src="/static/js/jquery-3.1.0.min.js"></script>
-	{% endblock %}
+     {% block script %}{% endblock %}
+
 </head>
 <body>
-
-{% block body %}
-
-    {% block top %}
 
     <div class="Top clearfix">
         <div class="content clearfix">
@@ -24,7 +23,7 @@
                     <div class="header-search">
                         <input type="text" maxlength="40" name="q" id="q" value="" />
                     </div>
-                    
+
                 </ul>
             </div>
 
@@ -38,23 +37,34 @@
                     <a class="nav-item" href="{{ url_for('user.user') }}">登录/注册</a>
                 </nav>
             </div>
-            
+
             </div>
     </div>
 
     <div class="clearfix"></div>
 
-    {% endblock %}
 
-    {% block Bottom %}
-        <div id="Bottom">
-            <strong>
-                <strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/p/7v9TEc53" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/ip" class="dark" target="_self">IP 查询</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://workspace.v2ex.com/" class="dark" target="_blank">工作空间</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/advertise" class="dark" target="_self">广告投放</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/advertise/2015.html" class="dark" target="_self">鸣谢</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/start" class="dark" target="_blank">上网首页</a> &nbsp; <span class="snow">·</span> &nbsp; 1263 人在线</strong>
-            </strong>
+
+    <div id="Wrapper">
+        <div id="wrapper-right">
+            {% block sidebar %}
+            {% endblock %}
+         </div>
+        
+        <div id="wrapper-main">
+            {% block content %}
+            {% endblock %}
         </div>
+            
+    </div>
 
-    {% endblock %}
 
-    {% endblock %}
+    <div id="Bottom">
+        <strong>
+            <strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/p/7v9TEc53" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/ip" class="dark" target="_self">IP 查询</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://workspace.v2ex.com/" class="dark" target="_blank">工作空间</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/advertise" class="dark" target="_self">广告投放</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/advertise/2015.html" class="dark" target="_self">鸣谢</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/start" class="dark" target="_blank">上网首页</a> &nbsp; <span class="snow">·</span> &nbsp; 1263 人在线</strong>
+        </strong>
+    </div>
+
+
 </body>
 </html>

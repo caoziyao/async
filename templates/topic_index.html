@@ -1,73 +1,81 @@
-
 {% extends "base.html" %}
 
-{% block head %}
-	{{ super() }}
-	<title>{% block title %}{% endblock %}</title>
-    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/topic_index.css') }}">
-{% endblock %}
 
+	{% block title %}{% endblock %}
 
-{% block body %}
-	
-	 {% block top %}
-	 	{{ super() }}
-	 {% endblock %}
-
-
-
-<div id="Wrapper">
-			<div id="wrapper-right">
-				<div>
-					<h2>hello {{ user.username }}</h2>
-					<img src="{{ user.img_url }}" alt="我的头像">
-				</div>
-
-				
-				<div>
-					<a href="{{ url_for('topic.topic_new') }}">创作新主题</a>
-				</div>
+	{% block css %}
+		<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/topic_index.css') }}">
+	{% endblock %}
     
-			</div>
-			<div id="wrapper-main">
-				<div class="sep20"></div>
-				<div class="box">
-					<div class="inner">
-						<a href="{{ url_for('topic.topic', node_id=1) }}">技术</a>
-						<a href="{{ url_for('topic.topic', node_id=2) }}">创意</a>
-						<a href="{{ url_for('topic.topic', node_id=3) }}">好玩</a>
-						<a href="{{ url_for('topic.topic', node_id=4) }}">Apple</a>
-						<a href="{{ url_for('topic.topic', node_id=5) }}">酷工作</a>
-						<a href="{{ url_for('topic.topic', node_id=5) }}">交易</a>
-						<a href="{{ url_for('topic.topic', node_id=7) }}">城市</a>
-						<a href="{{ url_for('topic.topic', node_id=8) }}">问与答</a>
-						<a href="{{ url_for('topic.topic', node_id=9) }}">最热</a>
-						<a href="{{ url_for('topic.topic', node_id=10) }}">全部</a>
-						<a href="{{ url_for('topic.topic', node_id=11) }}">R2</a>
-						<a href="{{ url_for('topic.topic', node_id=12) }}">节点</a>
-						<a href="{{ url_for('topic.topic', node_id=13) }}">关注</a>
-					</div>
+	{% block script %}
+		<script>
+			$(document).ready(function(){
+				var log = function(){
+					console.log(arguments)
+				}
+				// log('work')
+				// http://127.0.0.1:3000/topic/?node_id=1
+				var par = window.location.search //?node_id=1
+				var node_id = par.split('=')[1]	- 1
+				log(node_id)
+				var current = $('.inner a:eq('+ node_id +')')
+				current.attr("class", 'tap-current')
+			})
+		</script>
+	
+	{% endblock %}
 
 
-					{% for t in topic_list %}
-					<div class="cell-item">
-						<!--因为定义的关系，不用查询也可以知道t.user.img_url-->
-						<img src="{{ t.user.img_url }}" alt="avator">
-						<span>{{ t.user.username }}</span>
-						<a href="{{ url_for('detail.detail', topic_id=t.id) }}">{{t.title}}</a>
-						
-					</div>
-					{% endfor %}
-				</div>
-				dd
-			</div>
-		
+	{% block sidebar %}
+		<div>
+
+			<img src="{{ user.img_url }}" alt="我的头像">
+			<span class="bigger">
+				<a href="#">{{ user.username }} </a>
+			</span>
 		</div>
 
-		{% block Bottom %}
-			{{ super() }}
-		{% endblock %}
-{% endblock %}
+		
+		<div>
+			<img width="32" src="{{ url_for('static', filename='img/flat_compose.png') }}">
+			<a href="{{ url_for('topic.topic_new') }}">创作新主题</a>
+		</div>
+	{% endblock %}
+
+
+
+	{% block content %}
+		<div class="sep20"></div>
+		<div class="box">
+			<div class="inner">
+				<a class="tab" href="{{ url_for('topic.topic', node_id=1) }}">技术</a>
+				<a class="tab" href="{{ url_for('topic.topic', node_id=2) }}">创意</a>
+				<a class="tab" href="{{ url_for('topic.topic', node_id=3) }}">好玩</a>
+				<a class="tab" href="{{ url_for('topic.topic', node_id=4) }}">Apple</a>
+				<a class="tab" href="{{ url_for('topic.topic', node_id=5) }}">酷工作</a>
+				<a class="tab" href="{{ url_for('topic.topic', node_id=6) }}">交易</a>
+				<a class="tab" href="{{ url_for('topic.topic', node_id=7) }}">城市</a>
+				<a class="tab" href="{{ url_for('topic.topic', node_id=8) }}">问与答</a>
+				<a class="tab" href="{{ url_for('topic.topic', node_id=9) }}">最热</a>
+				<a class="tab" href="{{ url_for('topic.topic', node_id=10) }}">全部</a>
+				<a class="tab" href="{{ url_for('topic.topic', node_id=11) }}">R2</a>
+				<a class="tab" href="{{ url_for('topic.topic', node_id=12) }}">节点</a>
+				<a class="tab" href="{{ url_for('topic.topic', node_id=13) }}">关注</a>
+			</div>
+
+
+			{% for t in topic_list %}
+			<div class="cell-item">
+				<!--因为定义的关系，不用查询也可以知道t.user.img_url-->
+				<img src="{{ t.user.img_url }}" alt="avator">
+				<span>{{ t.user.username }}</span>
+				<a href="{{ url_for('detail.detail', topic_id=t.id) }}">{{t.title}}</a>
+				
+			</div>
+			{% endfor %}
+		</div>
+	{% endblock %}
+
 
 
 

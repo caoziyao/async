@@ -1,25 +1,17 @@
-
 {% extends "base.html" %}
 
-{% block head %}
-	{{ super() }}
-	<title>{% block title %}{% endblock %}</title>
-{% endblock %}
 
-
-{% block body %}
-	
-	 {% block top %}
-	 	{{ super() }}
-	 {% endblock %}
+	{% block title %}{% endblock %}
 
 
 
+    {% block sidebar %}
+        ddd
+    {% endblock %}
 
 
 
-
-        <!--id-->
+    {% block content %}
         <div>
             {{t.id}} {{t.title}} {{t.content}} {{t.created_time}}
         </div>
@@ -35,6 +27,9 @@
         {% endfor %}
 
 
-{% endblock %}
+    {% endblock %}
+<!--id-->
+
+
 
 
