@@ -77,12 +77,22 @@
 
 
 			{% for t in topic_list %}
-			<div class="cell-item">
+			<div class="cell-item clearfix">
 				<!--因为定义的关系，不用查询也可以知道t.user.img_url-->
-				<img src="{{ t.user.img_url }}" alt="avator">
-				<span>{{ t.user.username }}</span>
-				<a href="{{ url_for('detail.detail', topic_id=t.id) }}">{{t.title}}</a>
+				<div class="item-img">
+					<img src="{{ t.user.img_url }}" alt="avator">
+				</div>
 				
+				<div class="item-content">
+					<div class="item_title">
+						<a href="{{ url_for('detail.detail', topic_id=t.id) }}">{{t.title}}</a>
+					</div>
+					
+					<div class="small fade">
+						<strong>{{ t.user.username }}</strong>
+					</div>				
+				</div>
+
 			</div>
 			{% endfor %}
 		</div>

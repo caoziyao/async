@@ -99,9 +99,11 @@ def register():
     
     return redirect(url_for('.user'))
 
-@main.route('/signout')
-def signout():
+
+@main.route('/logout')
+def logout():
     """
     登出
     """
-    pass
+    session.pop('user_id', None)
+    return redirect(url_for('topic.topic'))

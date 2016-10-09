@@ -38,3 +38,24 @@
     background-color: black;
     color: white;
 }
+
+.item-img{
+    float: left;
+}
+
+.item-content{
+    float: left;
+    margin-left: 10px;
+}
+
+.item_title a:hover{
+    text-decoration: underline;
+}
+
+.fade{
+    margin-top: 5px;
+}
+
+strong{
+    color: #778087;
+}

@@ -81,7 +81,7 @@ a.nav-item{
     /* 设置 inlin-block, 这样才能设置 a 的尺寸和 padding */
     display: inline-block;
     /*color: white;*/
-    padding: 13px 20px;
+    padding: 12px 20px;
     text-align: center;
     text-decoration: none;
 }

@@ -16,7 +16,7 @@ def topic():
     """
     # 获取 http://127.0.0.1:3000/topic?id=1 中的 id
     u = current_user()
-    node_id = int(request.args.get('node_id'))
+    node_id = int(request.args.get('node_id', -1))
     print('node id', node_id)
     # 获得 nodes
     ns = Node.query.filter_by(id=node_id).first()
