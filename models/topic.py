@@ -17,11 +17,12 @@ class Topic(db.Model, ModelMixin):
     # 这里要定义外键
     node_id = db.Column(db.Integer, db.ForeignKey('nodes.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    user = db.relationship('User', backref='topic')
+    
 
     # 定义一个关系
     # foreign_keys 有时候可以省略, 比如现在...
     comments = db.relationship('Comment', backref='topic')
+    user = db.relationship('User', backref='topic')
 
     def __init__(self, form):
         self.title = form.get('title', '')

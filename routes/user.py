@@ -99,3 +99,9 @@ def register():
     
     return redirect(url_for('.user'))
 
+@main.route('/signout')
+def signout():
+    """
+    登出
+    """
+    pass

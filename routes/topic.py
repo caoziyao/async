@@ -18,6 +18,7 @@ def topic():
     u = current_user()
     node_id = int(request.args.get('node_id'))
     print('node id', node_id)
+    # 获得 nodes
     ns = Node.query.filter_by(id=node_id).first()
     if ns is None:
         # print('t is None', ts)

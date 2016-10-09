@@ -29,12 +29,18 @@
 
             <div class="top-right">
                 <nav class="top-nav">
-                    <a class="nav-item" href="{{ url_for('node.index') }}">首页</a>
-                    <a class="nav-item" href="">工作空间</a>
-                    <a class="nav-item" href="">记事本</a>
-                    <a class="nav-item" href="">时间轴</a>
-                    <a class="nav-item" href="{{ url_for('user.setting') }}">设置</a>
-                    <a class="nav-item" href="{{ url_for('user.user') }}">登录/注册</a>
+                    {% if user %}
+                        <a class="nav-item" href="{{ url_for('node.index') }}">首页</a>
+                        <a class="nav-item" href="">工作空间</a>
+                        <a class="nav-item" href="">记事本</a>
+                        <a class="nav-item" href="">时间轴</a>
+                        <a class="nav-item" href="{{ url_for('user.setting') }}">设置</a>
+                        <a class="nav-item" href="{{ url_for('user.user') }}">登出</a>
+                    {% else %}
+                        <a class="nav-item" href="{{ url_for('node.index') }}">首页</a>
+                        <a class="nav-item" href="{{ url_for('user.user') }}">登录/注册</a>
+                    {% endif %}
+
                 </nav>
             </div>
 

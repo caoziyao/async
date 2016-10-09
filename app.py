@@ -57,13 +57,13 @@ def create_all():
 def configure_app():
     """
     套路
+    # 设置 secret_key 来使用 flask 自带的 session
     """
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-    # 设置 secret_key 来使用 flask 自带的 session
+
     app.secret_key = 'secret key'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///{}'.format(db_path)
     db.init_app(app)
-    # 蓝图注册
     register_route(app)
     # 创建数据库
     # create_all()

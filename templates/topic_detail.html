@@ -2,30 +2,83 @@
 
 
 	{% block title %}{% endblock %}
+	{% block css %}
+		<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/topic_detail.css') }}">
+	{% endblock %}
 
 
+{% block sidebar %}
+		{% if user %}
+			<!--已经登录-->
+			<div>
+				<img src="{{ user.img_url }}" alt="我的头像">
+				<span class="bigger">
+					<a href="#">{{ user.username }} </a>
+				</span>
+			</div>
 
-    {% block sidebar %}
-        ddd
-    {% endblock %}
+			
+			<div>
+				<img width="32" src="{{ url_for('static', filename='img/flat_compose.png') }}">
+				<a href="{{ url_for('topic.topic_new') }}">创作新主题</a>
+			</div>
+		{% else %}
+			<!--没登录-->
+			<div>
+				<h3>V2EX = way to explore</h3>
+				<p>V2EX 是一个关于分享和探索的地方</p>
+				<div>
+					<a href="{{ url_for('user.user') }}">现在注册/登录</a>
+				</div>
+			</div>
+		{% endif %}
+
+	{% endblock %}
 
 
 
     {% block content %}
-        <div>
-            {{t.id}} {{t.title}} {{t.content}} {{t.created_time}}
-        </div>
-        <form action="{{ url_for('detail.comment_add', topic_id=t.id) }}" method="post">
-            <input type="text" name="comment" placeholder="comment">
-            <input type="submit" name="提交">
-        </form>
-
-        {% for c in comment_list %}
-            <div>
-                {{ c.comment }} at {{ c.created_time }} by {{ c.username }}
+        <div class="box">
+            <div class="hreader">
+                <div class="fr">
+                    <img src="{{ topic_user.img_url }}" alt="用户头像">
+                </div>
+                
+                <a href="/">v2ex</a>
+                <h1>{{topic.title}}</h1>
+                <small class="gray">
+                     <a href="#">{{ topic_user.username }}</a> . {{topic.created_time}}
+                </small>
             </div>
-        {% endfor %}
 
+            <div class="cell">
+                {{topic.content}}
+            </div>
+           
+        </div>
+
+        <div class="sep20"></div>
+
+        <div class="comments">
+        
+            {% for c in comment_list %}
+                <div class="comment-list">
+                    {{ c.comment }} at {{ c.created_time }} by {{ c.username }}
+                </div>
+            {% endfor %} 
+
+
+        </div>
+
+        {% if user %}
+            <div class="sep20"></div>
+            <div class="newcomment">
+                <form action="{{ url_for('detail.comment_add', topic_id=topic.id) }}" method="post">
+                    <input type="text" name="comment" placeholder="comment">
+                    <input type="submit" name="提交">
+                </form>
+            </div>
+        {% endif %}
 
     {% endblock %}
 <!--id-->

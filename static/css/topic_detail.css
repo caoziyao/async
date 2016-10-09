@@ -1,0 +1,37 @@
+.box{
+    
+}
+
+.hreader{
+    padding: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.sep20{
+    background-color: #e2e2e2;
+    height: 20px;
+}
+
+.fr{
+    float: right;
+}
+
+small.gray a{
+    text-decoration-line: underline;
+}
+
+.cell{
+    padding: 10px;
+}
+
+.comments{
+    height: 600px;
+    padding: 10px;
+}
+
+.comment-list{
+    height: 50px;
+    /*border-top: 1px solid #e2e2e2;*/
+    border-bottom: 1px solid #e2e2e2;
+}
