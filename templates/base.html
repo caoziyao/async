@@ -10,19 +10,9 @@
     
     <script src="/static/js/alertify.min.js"></script>
     <script src="/static/js/jquery-3.1.0.min.js"></script>
+    <script src='/static/js/base.js'></script>
 
-    <script>
-        $(document).ready(function(){
-            var log = function(){
-                console.log(arguments)
-            }
-            // logout
-            $('.logout').on('click', function(){
-                log('logout')
-                alert('是否退出')
-            })
-        })
-    </script>
+
      {% block script %}{% endblock %}
 
 </head>
@@ -32,7 +22,8 @@
         <div class="content clearfix">
             <div class="top-left ">
                 <ul>
-                    <img src="{{ url_for('static', filename='img/logo_2x.png') }}"  align="default" alt="iV2EX" >
+                    <a href="/"><img src="{{ url_for('static', filename='img/logo_2x.png') }}"  align="default" alt="iV2EX" ></a>
+                    
                     <div class="header-search">
                         <input type="text" maxlength="40" name="q" id="q" value="" />
                     </div>
@@ -79,9 +70,12 @@
 
 
     <div id="Bottom">
-        <strong>
-            <strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/p/7v9TEc53" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/ip" class="dark" target="_self">IP 查询</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://workspace.v2ex.com/" class="dark" target="_blank">工作空间</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/advertise" class="dark" target="_self">广告投放</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/advertise/2015.html" class="dark" target="_self">鸣谢</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/start" class="dark" target="_blank">上网首页</a> &nbsp; <span class="snow">·</span> &nbsp; 1263 人在线</strong>
-        </strong>
+        <div class="content">
+             <div><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/p/7v9TEc53" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/ip" class="dark" target="_self">IP 查询</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://workspace.v2ex.com/" class="dark" target="_blank">工作空间</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/advertise" class="dark" target="_self">广告投放</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/advertise/2015.html" class="dark" target="_self">鸣谢</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/start" class="dark" target="_blank">上网首页</a> &nbsp; <span class="snow">·</span> &nbsp; 1263 人在线</strong>
+            </div>
+        </div>
+
+
     </div>
 
 

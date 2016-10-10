@@ -107,7 +107,7 @@ a.nav-item{
 #wrapper-main{
     margin: 0px 380px 0px 100px;
     background-color: white;
-    height: 880px; 
+    min-height: 880px; 
     
 }
 
@@ -127,9 +127,13 @@ a.nav-item{
 
 
 #Bottom{
-    height: 40px;
+    /*height: 40px;*/
     /*margin-top: 20px;*/
     /*background: gray;*/
     padding: 0 10px 0 10px;
+
 }
 
+.content{
+    margin: 10px;
+}

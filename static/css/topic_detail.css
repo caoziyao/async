@@ -23,6 +23,7 @@ small.gray a{
 
 .cell{
     padding: 10px;
+     border-bottom: 1px solid #e2e2e2;
 }
 
 .comments{
@@ -30,8 +31,23 @@ small.gray a{
     padding: 10px;
 }
 
-.comment-list{
+/*.comment-list{
     height: 50px;
-    /*border-top: 1px solid #e2e2e2;*/
     border-bottom: 1px solid #e2e2e2;
+}*/
+
+.cell textarea{
+    width: 100%;
+    /*border: none;*/
+    maxlength: 100px;
+    font-family: 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+}
+
+.item-img{
+    float: left;
+}
+
+.item-content{
+    float: left;
+    margin-left: 10px;
 }

@@ -20,6 +20,7 @@ def topic():
     print('node id', node_id)
     # 获得 nodes
     ns = Node.query.filter_by(id=node_id).first()
+    # print('ns', ns)
     if ns is None:
         # print('t is None', ts)
         return render_template('topic_index.html', topic_list=[], user=u)
@@ -36,7 +37,8 @@ def topic_new():
     u = current_user()
     if request.method == 'GET':
         if u is not None:
-            return render_template('topic_new.html')
+            # return redirect(url_for('topic.topic'))
+            return render_template('topic_new.html', user=u)
         else:
             # 如果没有登录
             return redirect(url_for('node.index'))
@@ -47,6 +49,6 @@ def topic_new():
         t.node_id = int(form.get('note_id'))
         # 外键
         t.user_id = u.id
-        print('new save')
+        # print('new save')
         t.save()
         return redirect(url_for('.topic', node_id=t.node_id))

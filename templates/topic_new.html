@@ -2,22 +2,119 @@
 
 
 	{% block title %}创建新主题{% endblock %}
-
+    {% block css %}
+	 	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/topic_new.css') }}">
+	{% endblock %}
 
     {% block sidebar %}
-        lll
+        <div class="box">
+            <div class="cell">
+                发帖提示
+            </div>
+            <div class="inner">
+                <ul >
+                    <li>
+                        <span>主题标题</span>
+                        <div class="sep10">
+                             请在标题中描述内容要点。如果一件事情在标题的长度内就已经可以说清楚，那就没有必要写正文了。
+                        </div>
+                    </li>
+                    <li>
+                        <span>正文</span>
+                        <div class="sep10">
+                             可以在正文中为你要发布的主题添加更多细节。V2EX 支持 <span style="font-family: Consolas, 'Panic Sans', mono"><a href="https://help.github.com/articles/github-flavored-markdown">GitHub Flavored Markdown</a></span> 文本标记语法。
+                        </div>
+                    </li>
+                    <li>
+                        <span>选择节点</span>
+                        <div class="sep10">
+                             在最后，请为你的主题选择一个节点。恰当的归类会让你发布的信息更加有用。
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sep20"></div>
+
+        <div class="box">
+            <div class="cell">
+                社区指导原则
+            </div>
+
+            <div class="inner">
+                <ul>
+                    <li>
+                        <span>尊重原创</span>
+                        <div class="sep10">
+                             请不要在 V2EX 发布任何盗版下载链接，包括软件、音乐、电影等等。V2EX 是创意工作者的社区，我们尊重原创。
+                        </div>
+                    </li>
+                    <li>
+                        <span>友好互助</span>
+                        <div class="sep10">
+                             保持对陌生人的友善。用知识去帮助别人。
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     {% endblock %}
 
 
 	{% block content %}
-    <div>
+    <div class="box">
+        <div class="cell">
+            <a href="/">V2EX</a>
+            <span class="chevron">&nbsp;›&nbsp;</span>
+             创作新主题
+        </div>
+
         <form action="{{ url_for('topic.topic_new') }}" method='post'>
-            <input type="text" name="title" placeholder="title">
-            <input type="text" name="note_id" placeholder="note_id">
-            <textarea rows="10" cols="10" name="content"></textarea>
-            <button type="submit">发布</button>
+            <div class="cell">
+                主题标题
+            </div>
+            <div class="cell">
+                <input  type="text" name="title" placeholder="请输入主题标题，如果标题能够表达完整内容，则正文可以为空">
+            </div>
+            <div class="cell">
+                正文
+            </div>
+            <div class="cell">
+                <textarea rows="20" cols="10" name="content"></textarea>
+            </div>
+            <div class="cell">
+                请选择一个节点
+            </div>
+            <div class="cell">
+                <!--<input type="text"  placeholder="note_id">-->
+                <select name="note_id">  
+                    <option value ="1">技术</option>  
+                    <option value ="2">创意</option>  
+                    <option value ="3">好玩</option>  
+                    <option value ="4">Apple</option>
+                    <option value ="5">酷工作</option>
+                    <option value ="6">交易</option>
+                    <option value ="7">城市</option>
+                    <option value ="8">问与答</option>
+                    <option value ="9">最热</option>
+                    <option value ="10">全部</option>
+                    <option value ="11">R2</option>  
+                    <option value ="12">节点</option>  
+                    <option value ="13">关注</option>  
+                </select>  
+            </div>
+
+            <div class="cell">
+                <button type="submit">发布</button>
+            </div>
+            
         </form>
 
+        <div class="sep20"></div>
     </div>
+
+
+
     {% endblock %}
 

@@ -6,6 +6,17 @@
 		<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/topic_detail.css') }}">
 	{% endblock %}
 
+    <!--{% block script %}
+        <script>
+            $(document).ready(function(){
+                var log = function(){
+                    console.log(arguments)
+                }
+
+            })
+        </script>
+    {% endblock %}-->
+
 
 {% block sidebar %}
 		{% if user %}
@@ -47,7 +58,7 @@
                 <a href="/">v2ex</a>
                 <h1>{{topic.title}}</h1>
                 <small class="gray">
-                     <a href="#">{{ topic_user.username }}</a> . {{topic.created_time}}
+                     <a href="#">{{ topic_user.username }}</a> . <stamp>{{topic.created_time}}</stamp>
                 </small>
             </div>
 
@@ -62,22 +73,47 @@
         <div class="comments">
         
             {% for c in comment_list %}
-                <div class="comment-list">
-                    {{ c.comment }} at {{ c.created_time }} by {{ c.username }}
+                <div class="cell clearfix">
+                    <div class="item-img">
+                        <img src="{{ c.user.img_url }}" alt="头像">
+                    </div>
+                    
+                    <div class="item-content">
+                        <div>
+                            {{ c.user.username }} at  <stamp>{{ c.created_time }}</stamp>
+                        </div>
+                         <div>
+                             {{ c.comment }}
+                         </div>
+                         
+                    </div>
+                  
                 </div>
             {% endfor %} 
-
 
         </div>
 
         {% if user %}
             <div class="sep20"></div>
-            <div class="newcomment">
-                <form action="{{ url_for('detail.comment_add', topic_id=topic.id) }}" method="post">
-                    <input type="text" name="comment" placeholder="comment">
-                    <input type="submit" name="提交">
-                </form>
+
+            <div class="cell">
+                添加一条新回复
             </div>
+
+            
+                <form action="{{ url_for('detail.comment_add', topic_id=topic.id) }}" method="post">
+                   <div class="cell">
+                        <textarea rows="10" cols="10"  name="comment" placeholder="comment">
+                        </textarea>
+                   </div>
+                    
+                    <div class="cell">
+                        <input type="hidden" name="user_id" value="{{ user.id }}" >
+                        <input type="submit" value="回复">
+                    </div>
+                    
+                </form>
+            
         {% endif %}
 
     {% endblock %}
