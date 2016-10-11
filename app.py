@@ -22,9 +22,9 @@ manager = Manager(app)
 def server():
     print('server run')
     config = dict(
-        debug=True,
+        debug=False,
         host='0.0.0.0',
-        port=3000,
+        port=80,
     )
     app.run(**config)
 
@@ -67,6 +67,8 @@ def configure_app():
     register_route(app)
     # 创建数据库
     # create_all()
+    return app
+    
 
 
 
@@ -99,3 +101,4 @@ if __name__ == '__main__':
     configure_manager()
     configure_app()
     manager.run()       # 命令行
+    
