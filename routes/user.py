@@ -5,6 +5,8 @@ from models.user import User
 
 main = Blueprint('user', __name__)
 
+# UPLOAD_FOLDER = '/static/img/avatar'
+#pp.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 def current_user():
     """
@@ -53,12 +55,17 @@ def update_img():
     """
     更新头像
     """
+    
     u = current_user()
     form = request.form
     # print(form)
-    img = form.get('file', '')
-    img_url = '/static/img/avatar/' + img
-    u.img_url = img_url
+    # img = form.get('file', '')
+    file = request.files['file']
+    filename = file.filename
+    # print(os.path.join( os.getcwd(), filename))
+    file.save(os.path.join( os.getcwd(), 'static/img/avatar/',filename))
+    u.img_url = url_for('static', filename='img/avatar/') + filename
+    # print(u.img_url)
     u.save()
     return render_template('user_setting.html', user=u)
 

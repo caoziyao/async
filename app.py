@@ -17,6 +17,7 @@ db_path = 'todo.sqlite'
 manager = Manager(app)
 
 
+
 # 自定义的命令行命令用来运行服务器
 @manager.command
 def server():
@@ -63,10 +64,12 @@ def configure_app():
 
     app.secret_key = 'secret key'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///{}'.format(db_path)
+    
     db.init_app(app)
     register_route(app)
     # 创建数据库
     # create_all()
+    
     return app  # gunicorn
     
 

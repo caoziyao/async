@@ -40,3 +40,6 @@ pip3 install gunicorn
 
 source venv/bin/activate
 退出当前的venv环境，使用deactivate命令：
+
+ps ax|grep gunicorn
+pkill gunicorn
