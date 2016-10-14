@@ -22,7 +22,7 @@ manager = Manager(app)
 def server():
     print('server run')
     config = dict(
-        debug=False,
+        debug=True,
         host='0.0.0.0',
         port=80,
     )
@@ -67,7 +67,7 @@ def configure_app():
     register_route(app)
     # 创建数据库
     # create_all()
-    return app
+    return app  # gunicorn
     
 
 

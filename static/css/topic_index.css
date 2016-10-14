@@ -1,12 +1,8 @@
 
-
-
-
-
-
 .cell-item{
     padding: 10px;
     border-bottom: 1px solid #e2e2e2;
+    height: 60px;
 }
 
 
@@ -75,4 +71,91 @@ strong{
 
 .count_livid a{
     color: white;
+}
+
+.cell{
+    padding: 10px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.bigger{
+    position: relative;
+    top: -20px;
+    left: 8px;
+}
+
+.cell-nav{
+
+}
+
+
+
+.cell-nav ul{
+    margin-top: 10px;
+    margin-left: 12px;
+    list-style-type: none;
+        
+}
+
+.cell-nav ul li{
+    display: inline-block;
+    padding-right: 10px;
+    border-right: 1px solid #e2e2e2;
+    margin-right: 10px;
+    
+}
+.cell-nav ul li a{
+    color: #ccc;
+    font-size: 14px;
+}
+
+
+
+.li-bigger{
+    position: relative;
+    left: 20px;
+}
+
+
+.bigger a:hover{
+    text-decoration: underline;
+}
+
+.sep3{
+    height: 3px;
+}
+
+.new-item{
+    margin: 10px 10px;
+}
+
+.new-item a{
+    position: relative;
+    top: -10px;
+}
+
+.cell .fade{
+        color: #ccc;
+}
+
+.cell .center{
+    margin: 10px auto;
+    width: 100px;
+    background-color: #fff;
+    color: #333;
+    text-shadow: 0px 1px 0px #fff;
+    text-decoration: none;
+    font-weight: bold;
+    /*box-shadow: 0px 1px 0px rgba(66, 66, 77, 0.1);*/
+}
+
+.cell .button a{
+    background-image: url(/static/img/bg_blended_light.png);
+    padding: 4px 8px 4px 8px;
+    border: 1px solid rgba(80,80,90, 0.2);
+     border-bottom-color: rgba(80,80,90, 0.35); 
+     border-radius: 3px; 
+     font-size: 12px; 
+     line-height: 12px; 
+    outline: none; 
 }

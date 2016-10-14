@@ -1,6 +1,5 @@
-# gunicorn -w 4 -b '0.0.0.0:80' wsgi:application
-# gunicorn wsgi:application
-# nohup gunicorn  -b 0.0.0.0:80 wsgi:app &
+
+# nohup gunicorn -w4 -b0.0.0.0:80 appcorn:application &
 
 from app import configure_app
 # from app import configure_manager

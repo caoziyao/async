@@ -57,7 +57,7 @@
     border-radius: 4px;
     background: #2795dc;
     margin-top: 6px;
-    margin-left: 55px;
+    margin-left: 65px;
     color: white;
     cursor: pointer;
     border-color: #D7D7D7;
@@ -66,3 +66,4 @@
 .web-button button:hover{
     background: #0078b3;
 }
+

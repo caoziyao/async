@@ -2,31 +2,145 @@
 
     {% block title %}setting{% endblock %}
 
+     {% block css %}
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/topic_index.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/user_setting.css') }}">
+     {% endblock %}
 
+	{% block sidebar %}
+		{% if user %}
+			<!--已经登录-->
+			<div class="box">
+				<div class="cell">
+					<img src="{{ user.img_url }}" alt="我的头像">
+					<span class="bigger">
+						<a href="#">{{ user.username }} </a>
+					</span>
 
-            {% block sidebar %}
-            电动 
-            {% endblock %}
+					<div class="cell-nav">
+						<ul>
+							<li>
+								<a href="#">
+									<span class="li-bigger">0</span>
+									<div class="sep3"></div>
+									<span>节点收藏</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="li-bigger">0</span>
+									<div class="sep3"></div>
+									<span>主题收藏</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="li-bigger">0</span>
+									<div class="sep3"></div>
+									<span>特别关注</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 
+			</div>
+
+			
+			<div class="new-item">
+				<img width="32" src="{{ url_for('static', filename='img/flat_compose.png') }}">
+				<a href="{{ url_for('topic.topic_new') }}">创作新主题</a>
+			</div>
+		{% else %}
+			<!--没登录-->
+			<div class="box">
+				<div class="cell">
+					<h4>v2ex = way to explore</h3>
+					<p class="fade">V2EX 是一个关于分享和探索的地方</p>		
+				</div>
+
+				<div class="cell">
+					<div class="center button">
+						<a href="{{ url_for('user.user') }}">现在注册/登录</a>
+					</div>	
+				</div>
+
+			</div>
+		{% endif %}
+
+	{% endblock %}
 
         {% block content %}
-        <div class="wrapper">
-            <form action="{{ url_for('user.setting') }}" method="post">
-                <label for="">用户名</label><span>{{ user.username }}</span> <br />
-                <label for="email">电子邮件</label><input type="text" name="email"> <br />
-                <label for="signed">签名</label><input type="text" name="signed"> <br />
-                <label for="brief">个人简介</label><textarea rows="10" cols="6" name="brief"></textarea> <br />
-                <button type="submit">保持设置</button>
-            </form>
+        <div class="box">
+            <div class="cell">
+                <a href="/">V2EX</a>
+                <span class="chevron">&nbsp;›&nbsp;</span>
+                设置
+            </div>
+
+
+            <div class="cell">
+                <form action="{{ url_for('user.setting') }}" method="post">
+                 <table>
+                    <tbody>
+                        <tr>
+                            <td width="120" align="right">用户名</td>
+                            <td width="auto" align="left">{{ user.username }}</td>
+                        </tr>
+
+                        <tr>
+                            <td width="120" align="right">电子邮件</td>
+                            <td width="auto" align="left">
+                                <input type="text" name="email"> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="120" align="right">签名</td>
+                            <td width="auto" align="left">
+                                <input type="text" name="signed">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="120" align="right">个人简介</td>
+                            <td width="auto" align="left">
+                                <textarea rows="10" cols="30" name="brief"></textarea>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="120" align="right">
+                                <button type="submit">保存设置</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                 </table>
+                </form>
+
+                
+
+                </form>
+
+ 
+                 <div class="update-img">
+                    <form action="{{ url_for('user.update_img') }}" method="post">
+                        <img src="{{ user.img_url }}" alt="当前图像">
+                        <input type="file" name="file" accept="image/*">
+                        <button type="submit">开始上传</button>
+                    </form>
+                 </div>
+
+
+            </div>
+            
+
+
+
         </div>
 
-        <div class="update-img">
-            <form action="{{ url_for('user.update_img') }}" method="post">
-                <img src="{{ user.img_url }}" alt="当前图像">
-                <input type="file" name="file" accept="image/*">
-                <button type="submit">开始上传</button>
-            </form>
-        </div>
+
+
 
 
      {% endblock %}

@@ -1,0 +1,17 @@
+
+ul{
+    list-style-type: none;
+}
+
+.cell .item{
+    padding: 8px;
+}
+
+.update-img{
+    margin-top: 20px;
+    margin-left: 80px;
+}
+
+tr{
+    line-height: 150%;
+}

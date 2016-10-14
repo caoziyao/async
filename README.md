@@ -30,8 +30,8 @@ Gunicorn 应该装在你的 virtualenv 环境下。安装前记得激活 venv
 
 
 - 项目地址
-45.76.101.36:3000
-或 www.zycode.cc:3000
+45.76.101.36
+或 www.zycode.cc
 
 
 - 附
