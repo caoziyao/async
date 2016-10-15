@@ -12,7 +12,7 @@
 			<!--已经登录-->
 			<div class="box">
 				<div class="cell">
-					<img src="{{ user.img_url }}" alt="我的头像">
+					<img class="avatar" src="{{ user.img_url }}" alt="我的头像">
 					<span class="bigger">
 						<a href="#">{{ user.username }} </a>
 					</span>
@@ -125,7 +125,7 @@
  
                  <div class="update-img">
                     <form action="{{ url_for('user.update_img') }}" method="post" enctype=multipart/form-data>
-                        <img src="{{ user.img_url }}" alt="当前图像">
+                        <img class="avatar"  src="{{ user.img_url }}" alt="当前图像">
 
                         <input type="file" name="file" accept="image/*">
                         <button type="submit">开始上传</button>

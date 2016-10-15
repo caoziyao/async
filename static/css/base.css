@@ -15,6 +15,11 @@ a {
     text-decoration: none;
 }
 
+.avatar{
+    height: 48px;
+    width: 48px;
+}
+
 .clearfix:after {
       display: block;
       clear: both;
@@ -26,10 +31,10 @@ a {
 .Top{
     text-align: center;
     background-color: #fff;
-    height: 44px;
+    /*height: 44px;*/
 
     font-weight: 500;
-    background-size: 44px 44px;
+    /*background-size: 44px 44px;*/
     border-bottom: 1px solid rgba(0, 0, 0, 22);
 }
 
@@ -40,19 +45,19 @@ a {
 
 .top-left ul img{
     width: 104px;
-    height: 30px;
+    /*height: 30px;*/
     padding: 6px 10px;
 }
 
 .header-search{
   width: 276px;
-  height: 28px;
-  background-size: 276px 28px;
+  /*height: 28px;*/
+  /*background-size: 276px 28px;*/
   /*background-image: url("../img/qbar_light.png");*/
   /*background-repeat: no-repeat;*/
   /*display: inline-block;*/
   position: absolute;
-  margin: -54px 0px 2px 80px;
+  margin: -58px 0px 2px 80px;
 }
 
 .header-search input{
@@ -75,13 +80,14 @@ a {
 
 nav.top-nav{
     /*background: black;*/
+    height: 49px;
 }
 
 a.nav-item{
     /* 设置 inlin-block, 这样才能设置 a 的尺寸和 padding */
     display: inline-block;
     /*color: white;*/
-    padding: 12px 20px;
+    padding: 14px 20px;
     text-align: center;
     text-decoration: none;
 }
@@ -135,5 +141,5 @@ a.nav-item{
 }
 
 .content{
-    margin: 10px;
+    /*margin: 10px;*/
 }

@@ -31,7 +31,7 @@
 			<!--已经登录-->
 			<div class="box">
 				<div class="cell">
-					<img src="{{ user.img_url }}" alt="我的头像">
+					<img class="avatar"  src="{{ user.img_url }}" alt="我的头像">
 					<span class="bigger">
 						<a href="#">{{ user.username }} </a>
 					</span>
@@ -115,7 +115,7 @@
 			<div class="cell-item clearfix">
 				<!--因为定义的关系，不用查询也可以知道t.user.img_url-->
 				<div class="item-img">
-					<img src="{{ t.user.img_url }}" alt="avator">
+					<img class="avatar"  src="{{ t.user.img_url }}" alt="avator">
 				</div>
 				
 				<div class="item-content">
