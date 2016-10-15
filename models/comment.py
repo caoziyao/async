@@ -2,6 +2,8 @@ from . import ModelMixin
 from . import db
 from . import timestamp
 
+import json
+
 
 class Comment(db.Model, ModelMixin):
     """
@@ -23,3 +25,18 @@ class Comment(db.Model, ModelMixin):
     def __init__(self, form):
         self.comment = form.get('comment', '')
         self.created_time = timestamp()
+
+    def json(self):
+        d = dict(
+            id=self.id,
+            created_time=self.created_time,
+            comment=self.comment,
+            
+            replys=self.replys,
+            topic_id=self.topic_id,
+            user_id=self.user_id,
+            # 外键
+            user_img_url=self.user.img_url,
+            username=self.user.username,
+        )
+        return d

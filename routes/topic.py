@@ -29,6 +29,8 @@ def topic():
     return render_template('topic_index.html', topic_list=ns.topics, user=u)
 
 
+
+
 @main.route('/new', methods=[ 'GET', 'POST'])
 def topic_new():
     """
@@ -43,6 +45,12 @@ def topic_new():
             # 如果没有登录
             return redirect(url_for('node.index'))
     else:
+
+        r = {
+            'data': []
+        }
+
+
         form = request.form
         print('new', form)
         t = Topic(form)
@@ -51,4 +59,36 @@ def topic_new():
         t.user_id = u.id
         # print('new save')
         t.save()
-        return redirect(url_for('.topic', node_id=t.node_id))
+        # 返回数据给后端
+        r['success'] = True
+        r['data'] = t.json()
+
+        return json.dumps(r, ensure_ascii=False)
+
+
+
+
+
+# @main.route('/new', methods=[ 'GET', 'POST'])
+# def topic_new():
+#     """
+#     创作新主题
+#     """
+#     u = current_user()
+#     if request.method == 'GET':
+#         if u is not None:
+#             # return redirect(url_for('topic.topic'))
+#             return render_template('topic_new.html', user=u)
+#         else:
+#             # 如果没有登录
+#             return redirect(url_for('node.index'))
+#     else:
+#         form = request.form
+#         print('new', form)
+#         t = Topic(form)
+#         t.node_id = int(form.get('note_id'))
+#         # 外键
+#         t.user_id = u.id
+#         # print('new save')
+#         t.save()
+#         return redirect(url_for('.topic', node_id=t.node_id))

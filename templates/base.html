@@ -6,12 +6,15 @@
     <title>{% block title %}{% endblock %}</title>
 
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='wangEditor/css/wangEditor.min.css') }}">
      {% block css %}{% endblock %}
     
     <script src="/static/js/alertify.min.js"></script>
     <script src="/static/js/jquery-3.1.0.min.js"></script>
     <script src='/static/js/base.js'></script>
 
+    <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+    <script src="{{ url_for('static', filename='wangEditor/js/wangEditor.min.js') }}"></script>
 
      {% block script %}{% endblock %}
 

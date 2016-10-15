@@ -6,6 +6,12 @@
 	 	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/topic_new.css') }}">
 	{% endblock %}
 
+
+    {% block script %}
+        <script src="{{ url_for('static', filename='js/topic_new.js') }}"></script>
+    {% endblock %}
+
+
     {% block sidebar %}
         <div class="box">
             <div class="cell">
@@ -62,6 +68,7 @@
     {% endblock %}
 
 
+
 	{% block content %}
     <div class="box">
         <div class="cell">
@@ -70,7 +77,50 @@
              创作新主题
         </div>
 
-        <form action="{{ url_for('topic.topic_new') }}" method='post'>
+        <div class="gua-new-topic">
+             <div class="cell">
+                    主题标题
+                </div>
+                <div class="cell">
+                    <input id="id-button-title" type="text" name="title" placeholder="请输入主题标题，如果标题能够表达完整内容，则正文可以为空">
+                </div>
+                <div class="cell">
+                    正文
+                </div>
+                <div class="">
+                   <div id="wang-topic">
+                        <p></p>
+                    </div> 
+                </div>
+                <div class="cell">
+                    请选择一个节点
+                </div>
+                <div class="cell">
+                    <select id="id-button-option-value" name="note_id">  
+                        <option value ="1">技术</option>  
+                        <option value ="2">创意</option>  
+                        <option value ="3">好玩</option>  
+                        <option value ="4">Apple</option>
+                        <option value ="5">酷工作</option>
+                        <option value ="6">交易</option>
+                        <option value ="7">城市</option>
+                        <option value ="8">问与答</option>
+                        <option value ="9">最热</option>
+                        <option value ="10">全部</option>
+                        <option value ="11">R2</option>  
+                        <option value ="12">节点</option>  
+                        <option value ="13">关注</option>  
+                    </select>  
+                </div>
+
+                <div class="cell">
+                    <button  id="id-button-topic-add" type="submit">发布</button>
+                </div>
+        </div>
+            
+
+
+        <!--<form action="{{ url_for('topic.topic_new') }}" method='post'>
             <div class="cell">
                 主题标题
             </div>
@@ -87,7 +137,6 @@
                 请选择一个节点
             </div>
             <div class="cell">
-                <!--<input type="text"  placeholder="note_id">-->
                 <select name="note_id">  
                     <option value ="1">技术</option>  
                     <option value ="2">创意</option>  
@@ -109,7 +158,7 @@
                 <button type="submit">发布</button>
             </div>
             
-        </form>
+        </form>-->
 
         <div class="sep20"></div>
     </div>

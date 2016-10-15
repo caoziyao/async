@@ -2,6 +2,7 @@ from . import ModelMixin
 from . import db
 from . import timestamp
 
+import json
 
 class Topic(db.Model, ModelMixin):
     """
@@ -28,3 +29,14 @@ class Topic(db.Model, ModelMixin):
         self.title = form.get('title', '')
         self.content = form.get('content', '')
         self.created_time = timestamp()
+
+    def json(self):
+        d = dict(
+            id = self.id,
+            title = self.title,
+            content = self.content,
+            created_time = self.created_time,
+            node_id = self.node_id,
+            user_id = self.user_id,
+        )
+        return d

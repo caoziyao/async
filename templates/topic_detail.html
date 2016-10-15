@@ -5,18 +5,12 @@
 	{% block css %}
 		<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/topic_detail.css') }}">
         <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/topic_index.css') }}">
+
 	{% endblock %}
 
-    <!--{% block script %}
-        <script>
-            $(document).ready(function(){
-                var log = function(){
-                    console.log(arguments)
-                }
-
-            })
-        </script>
-    {% endblock %}-->
+    {% block script %}
+        <script src="{{ url_for('static', filename='js/topic_detail.js') }}"></script>
+    {% endblock %}
 
 
 
@@ -101,7 +95,7 @@
                 </small>
             </div>
 
-            <div class="cell">
+            <div class="cell jq-html-content">
                 <!--<pre>-->
                 {{topic.content}}
                 <!--</pre>-->
@@ -124,7 +118,7 @@
                         <div>
                             {{ c.user.username }} at  <stamp>{{ c.created_time }}</stamp>
                         </div>
-                         <div>
+                         <div class="jq-html-content">
                              {{ c.comment }}
                          </div>
                          
@@ -135,6 +129,8 @@
 
         </div>
 
+    
+
         {% if user %}
             <div class="sep20"></div>
 
@@ -142,11 +138,21 @@
                 添加一条新回复
             </div>
 
-            
-                <form action="{{ url_for('detail.comment_add', topic_id=topic.id) }}" method="post">
+                <div class="">
+                    <div id="wangEditor-comment">
+                          <p></p>
+                     </div>       
+                </div>
+
+                    <div class="cell">
+                        <input id="id-button-topic-id" type="hidden" name="user_id" value="{{ topic.id }}" >
+                        <input id="id-button-user-id" type="hidden" name="user_id" value="{{ user.id }}" >
+                        <input id="id-button-comment-add" type="submit" value="回复">
+                    </div>
+
+                <!--<form action="{{ url_for('detail.comment_add', topic_id=topic.id) }}" method="post">
                    <div class="cell">
-                        <textarea rows="10" cols="10"  name="comment" placeholder="comment">
-                        </textarea>
+                        <textarea rows="10" cols="10"  name="comment" placeholder="comment"></textarea>
                    </div>
                     
                     <div class="cell">
@@ -154,7 +160,7 @@
                         <input type="submit" value="回复">
                     </div>
                     
-                </form>
+                </form>-->
             
         {% endif %}
 

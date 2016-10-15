@@ -9,7 +9,7 @@ $(document).ready(function(){
         })
 
 
-        var dateDiff = function(){
+        dateDiff = function(){
             /**
              * [dateDiff 算时间差]
              * @param  {[type=Number]} hisTime [历史时间戳，必传]
@@ -51,5 +51,11 @@ $(document).ready(function(){
             var date = $(this).text()
             var stamp = dateDiff( date )
             $(this).text( stamp )
+        })
+
+        // jQuery 遍历 - each() 方法
+        $('.jq-html-content').each(function(){
+            var str = $(this).text()
+            $(this).html(str)
         })
 })

@@ -27,18 +27,49 @@ def detail():
     return render_template('topic_detail.html', topic=t, comment_list=cs, topic_user=tu, user=lu)
 
 
+# ajax
 @main.route('/add/<int:topic_id>', methods=['POST'])
 def comment_add(topic_id):
     """
+    ajax
     增加评论功能, topic_id 唯一标识一个 Topic
     """
     # print('comment_add id', topic_id)
     form = request.form
+    topic_id = form.get('topic_id')
     user_id = form.get('user_id', None)
+
+    r = {
+        'data': []
+    }
+
     c = Comment(form)
     # 外键
     c.topic_id = topic_id
     c.user_id = user_id
     
     c.save()
-    return redirect(url_for('.detail', topic_id=topic_id))
+    # 返回数据给后端
+    r['success'] = True
+    r['data'] = c.json()
+
+    return json.dumps(r, ensure_ascii=False)
+
+
+# form
+# @main.route('/add/<int:topic_id>', methods=['POST'])
+# def comment_add(topic_id):
+#     """
+#     form
+#     增加评论功能, topic_id 唯一标识一个 Topic
+#     """
+#     # print('comment_add id', topic_id)
+#     form = request.form
+#     user_id = form.get('user_id', None)
+#     c = Comment(form)
+#     # 外键
+#     c.topic_id = topic_id
+#     c.user_id = user_id
+    
+#     c.save()
+#     return redirect(url_for('.detail', topic_id=topic_id))
