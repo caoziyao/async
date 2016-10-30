@@ -99,11 +99,13 @@ def register():
     form = request.form
     # print('user', u)
     u = User(form)
+    if not u.valid_register():
+        return redirect(url_for('.user'))
     u.img_url = url_for('static', filename='img/avatar/default.png')
-    print(u.img_url)
+    # print(u.img_url)
+
     u.save()
     print('注册成功')
-    
     return redirect(url_for('.user'))
 
 

@@ -1,5 +1,11 @@
 # iV2EX
-伪V2EX
+仿V2EX论坛
+
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
+[![platform](https://img.shields.io/badge/python-3.4-green.svg)]()
+
+* 主页：[https://github.com/caoziyao/iV2EX](https://github.com/caoziyao/iV2EX)
+* 联系邮箱：wyzycao@gmail.com
 
 > * 项目地址
 > * python 配置环境
@@ -10,7 +16,7 @@
 > * 运行
 
 
-![cmd-markdown-logo](https://github.com/caoziyao/iV2EX/blob/master/static/img/v2ex.png)  
+![iV2EX](https://github.com/caoziyao/iV2EX/blob/master/static/img/v2ex.png)  
 
 ## 项目地址
 

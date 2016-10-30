@@ -57,7 +57,6 @@ def create_all():
 
 def configure_app():
     """
-    套路
     # 设置 secret_key 来使用 flask 自带的 session
     """
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
