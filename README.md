@@ -9,12 +9,8 @@
 
 > * 项目地址
 > * python 配置环境
-> * 配置 nginx
-> * 使用 virtualenv
-> * 配置 Gunicorn
-> * 配置 supervisord
 > * 运行
-
+> * 开发日记
 
 ![iV2EX](https://github.com/caoziyao/iV2EX/blob/master/static/img/v2ex.png)  
 
@@ -24,53 +20,34 @@
 或
 http://www.zycode.cc
 
+## 开发日记
+- [x] 搭建框架
+- [x] 发布、编辑、删除文章功能
+- [x] 添加富文本编辑器
+- [x] 个人信息修改
+- [x] 图片上传
+- [x] 分页功能
+- [x] 完善个人主页：显示发布过的文章
+- [x] 添加权限系统
+- 安全问题、密码加密 hashlib
+- 爬虫获取内容
+
+## 优化
+
+## 部署方案
+- nginx + Gunicorn + supervisord
+- virtualenv
 
 ## python 配置环境
-```python
-apt-get update
-apt-get install python-dev python-pip python-virtualenv
-
-apt-get install python3-pip
-pip3 install virtualenv
-pip3 install flask flask-sqlalchemy
-pip3 install flask-migrate flask-script
-```
-
-## 安装 nginx
-```python
-apt-get install nginx
-```
-
-## 使用 virtualenv
-```python
-在 /var/www 目录下建立一个 myflask 的文件夹(你的项目目录)，然后用 chmod 改一下权限
-mkdir /var/www/iV2EX
-chmod 777 /var/www/iV2EX
-virtualenv --no-site-packages venv
-source venv/bin/activate
-```
-
-## 配置 Gunicorn
-```python
-Gunicorn 应该装在你的 virtualenv 环境下。安装前记得激活 venv
-(venv) $ pip3 install gunicorn
-
-运行 Gunicorn
-(venv) $  nohup gunicorn -w4 -b0.0.0.0:80 appcorn:application &
-```
-
-## 配置 supervisord
+- 后台基于flask开发，可以用Python环境直接运行。 
+1. pip环境下安装在static下的package pip install -r static/dev.txt 
+2. python app.py 
+3. 访问 http://localhost:80/
 
 
 
-## 附
-```python
-pip uninstall gunicorn
-pip3 install gunicorn
 
-source venv/bin/activate
-退出当前的venv环境，使用deactivate命令：
 
-ps ax|grep gunicorn
-pkill gunicorn
-```
+
+
+
