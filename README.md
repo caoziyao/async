@@ -40,8 +40,8 @@ http://www.zycode.cc
 
 ## python 配置环境
 - 后台基于flask开发，可以用Python环境直接运行。 
-1. pip环境下安装在static下的package pip install -r static/dev.txt 
-2. python app.py 
+1. pip环境下安装在/下的package pip3 install -r requirements.txt
+2. python3 app.py server
 3. 访问 http://localhost:80/
 
 
