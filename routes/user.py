@@ -1,6 +1,8 @@
 from routes import *
 
+
 from models.user import User
+from utils import sh1hexdigest
 
 
 main = Blueprint('user', __name__)
@@ -104,6 +106,9 @@ def register():
     u.img_url = url_for('static', filename='img/avatar/default.png')
     # print(u.img_url)
 
+    # 摘要算法
+    u.password = sh1hexdigest( form.get('password', '') )
+    print(u.password)
     u.save()
     print('注册成功')
     return redirect(url_for('.user'))

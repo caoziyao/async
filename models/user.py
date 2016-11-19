@@ -3,6 +3,7 @@ from . import db
 from . import timestamp
 
 from flask import flash
+from utils import sh1hexdigest
 
 class Permission:
     """
@@ -46,11 +47,15 @@ class User(db.Model, ModelMixin):
         self.created_time = timestamp()
         self.permissions = 0x7      # 默认是普通用户
 
+
     def valid_login(self, u):
         """
         校验登陆
         """
-        return u is not None and u.username == self.username and u.password == self.password
+        if u is not None:
+            return u.username == self.username and u.password == sh1hexdigest(self.password)
+        else:
+            return False
 
     def valid_register(self):
         """
