@@ -22,6 +22,9 @@ class Topic(db.Model, ModelMixin):
 
     # 定义一个关系
     # foreign_keys 有时候可以省略, 比如现在...
+    # 自动关联 不用手动查询就有数据
+    # 通过topic查找comment：c = t.comments
+    # 也可以通过comment查找topic： t = c.topic
     comments = db.relationship('Comment', backref='topic')
     user = db.relationship('User', backref='topic')
 
