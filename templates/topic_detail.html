@@ -82,6 +82,7 @@
 
 
     {% block content %}
+    <div class="detail-content">
         <div class="box">
             <div class="hreader">
                 <div class="fr">
@@ -95,7 +96,7 @@
                 </small>
             </div>
 
-            <div class="cell jq-html-content">
+            <div class="jq-html-content">
                 <!--<pre>-->
                 {{topic.content}}
                 <!--</pre>-->
@@ -129,12 +130,11 @@
 
         </div>
 
-    
 
-        {% if user %}
+ {% if user %}
             <div class="sep20"></div>
 
-            <div class="cell">
+            <div class="cell-comment">
                 添加一条新回复
             </div>
 
@@ -144,7 +144,7 @@
                      </div>       
                 </div>
 
-                    <div class="cell">
+                    <div class="cell-comment">
                         <input id="id-button-topic-id" type="hidden" name="user_id" value="{{ topic.id }}" >
                         <input id="id-button-user-id" type="hidden" name="user_id" value="{{ user.id }}" >
                         <input id="id-button-comment-add" type="submit" value="回复">
@@ -163,6 +163,12 @@
                 </form>-->
             
         {% endif %}
+
+    </div>
+        
+    
+
+       
 
     {% endblock %}
 <!--id-->

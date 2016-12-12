@@ -1,23 +1,33 @@
 *{
-    padding: 0;
-    margin: 0;
+    /*padding: 0;*/
+    /*margin: 0;*/
     /*background-color: lightcoral;*/
     /*border: 1px red dashed;*/
 }
 
+ul{
+    list-style: none;
+}
+
 body{
     font-family: "Microsoft Yahei";
-    font-size: 15px;
+    font-size: 18px;
+    line-height: 160%;
+    /*background-color: #e2e2e2;*/
+    background-image: url("../img/yourname-003.jpg");
+    /*background-repeat: no-repeat;*/
 }
 
 a {
     color: #555;
     text-decoration: none;
+    word-break: break-all;
 }
 
 .avatar{
-    height: 48px;
-    width: 48px;
+    height: 60px;
+    width: 60px;
+    border-radius: 10%;
 }
 
 .clearfix:after {
@@ -32,7 +42,7 @@ a {
     text-align: center;
     background-color: #fff;
     /*height: 44px;*/
-
+    margin: -10px;
     font-weight: 500;
     /*background-size: 44px 44px;*/
     border-bottom: 1px solid rgba(0, 0, 0, 22);
@@ -80,16 +90,24 @@ a {
 
 nav.top-nav{
     /*background: black;*/
-    height: 49px;
+    /*height: 49px;*/
+    
 }
 
 a.nav-item{
     /* 设置 inlin-block, 这样才能设置 a 的尺寸和 padding */
     display: inline-block;
     /*color: white;*/
-    padding: 14px 20px;
-    text-align: center;
+    /*padding: 14px 20px;*/
     text-decoration: none;
+    /*height: 100%;*/
+    /*line-height: 140%;*/
+    font-size: 22px;
+    text-align:center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 /* 鼠标移上去的时候, 设置新颜色 */
@@ -101,19 +119,18 @@ a.nav-item{
 }
 
 #Wrapper{
-    background-color: #e2e2e2;
+
     background-image: url(/static/img/shadow_light.png);
     background-repeat: no-repeat;
     padding-bottom: 20px;
-    /*width: 600px;
-    height: 800px;*/
+    width: 80%;
+    margin: 0 auto;
+    /*height: 800px;*/
     padding-top: 25px;
 }
 
 #wrapper-main{
-    margin: 0px 380px 0px 100px;
-    background-color: white;
-    min-height: 880px; 
+
     
 }
 
@@ -126,17 +143,26 @@ a.nav-item{
 #wrapper-right{
     background-color: white;
     float: right;
-    width: 300px;
+    width: 20%;
     /*margin-top: 25px;*/
-    margin-right: 50px;
+    /*margin-right: 50px;*/
 }
 
 
 #Bottom{
-    /*height: 40px;*/
+    height: 40px;
     /*margin-top: 20px;*/
-    /*background: gray;*/
-    padding: 0 10px 0 10px;
+    background-color: #dddce2;
+    /*background-color: 60%;*/
+    /*padding: 0 10px 0 10px;*/
+    /*padding: 0;*/
+    /*margin: 0 0 -30px 0;*/
+    filter:alpha(opacity=50);  
+    -moz-opacity:0.5;  
+    -khtml-opacity: 0.5;  
+    opacity: 0.5; 
+      /*margin-bottom: -120px;*/
+      
 
 }
 

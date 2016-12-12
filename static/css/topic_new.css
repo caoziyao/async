@@ -1,18 +1,21 @@
-.box{
-   /*margin: 10px;*/
-   font-size: 12px;
-    line-height: 150%;
+.new-content{
+    width: 75%;
 }
 
 .cell{
     padding: 10px;
     border-bottom: 1px solid #e2e2e2;
+    background-color: white;
 }
 
 .inner{
     /*padding: 10px;*/
-    margin: 10px 20px;
+    /*margin: 10px 20px;*/
+    /*margin-right: 10px;*/
 }
+    .inner ul{
+        padding: 0px 10px;
+    }
 
 .sep10{
     margin-top: 10px;
@@ -24,7 +27,7 @@
 }
 
 .sep20{
-    background-color: #e2e2e2;
+    /*background-color: #e2e2e2;*/
     height: 20px;
 }
 

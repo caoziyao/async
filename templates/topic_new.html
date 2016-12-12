@@ -13,9 +13,10 @@
 
 
     {% block sidebar %}
+
         <div class="box">
             <div class="cell">
-                发帖提示
+                <strong>发帖提示</strong>
             </div>
             <div class="inner">
                 <ul >
@@ -45,7 +46,7 @@
 
         <div class="box">
             <div class="cell">
-                社区指导原则
+                <strong>社区指导原则</strong>
             </div>
 
             <div class="inner">
@@ -70,7 +71,8 @@
 
 
 	{% block content %}
-    <div class="box">
+    <div class="new-content">
+ <div class="box">
         <div class="cell">
             <a href="/">V2EX</a>
             <span class="chevron">&nbsp;›&nbsp;</span>
@@ -84,6 +86,8 @@
                 <div class="cell">
                     <input id="id-button-title" type="text" name="title" placeholder="请输入主题标题，如果标题能够表达完整内容，则正文可以为空">
                 </div>
+
+                <div class="sep20"></div>
                 <div class="cell">
                     正文
                 </div>
@@ -92,6 +96,8 @@
                         <p></p>
                     </div> 
                 </div>
+
+                <div class="sep20"></div>
                 <div class="cell">
                     请选择一个节点
                 </div>
@@ -162,7 +168,10 @@
 
         <div class="sep20"></div>
     </div>
+ 
+    </div>
 
+   
 
 
     {% endblock %}

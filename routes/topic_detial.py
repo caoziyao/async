@@ -35,15 +35,15 @@ def comment_add(topic_id):
     增加评论功能, topic_id 唯一标识一个 Topic
     """
     # print('comment_add id', topic_id)
-    form = request.form
-    topic_id = form.get('topic_id')
-    user_id = form.get('user_id', None)
+    _form = request.form
+    topic_id = _form.get('topic_id')
+    user_id = _form.get('user_id', None)
 
     r = {
         'data': []
     }
 
-    c = Comment(form)
+    c = Comment(_form)
     # 外键
     c.topic_id = topic_id
     c.user_id = user_id

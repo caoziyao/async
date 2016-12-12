@@ -1,13 +1,9 @@
 
-.cell-item{
-    padding: 10px;
-    border-bottom: 1px solid #e2e2e2;
-    height: 60px;
-}
 
 
 .box{
     /*border-radius: 8px;*/
+    background-color: white;
 }
 
 .box .inner{
@@ -22,6 +18,7 @@
     padding: 5px 8px 5px 8px;
     margin-right: 5px;
     border-radius: 3px;
+    
 }
 
 .box .inner a:hover:not(.tap-current){
@@ -35,18 +32,27 @@
     color: white;
 }
 
-.item-img{
-    float: left;
+.cell-item{
+    padding: 10px 20px;
+    border-bottom: 1px solid #e2e2e2;
+    height: 80px;
 }
 
-.item-content{
-    float: left;
-    margin-left: 10px;
-}
+    .item-img{
+        float: left;
+    }
 
-.item_title a:hover{
-    text-decoration: underline;
-}
+
+    .item-content{
+        float: left;
+        margin-left: 20px;
+        width: 80%;
+        font-size: 20px;
+    }
+
+    .item_title a:hover{
+        text-decoration: underline;
+    }
 
 .fade{
     margin-top: 5px;
@@ -63,9 +69,9 @@ strong{
     /*background-color: #e5e5e5;*/
     border-radius: 12px;
     padding: 2px 10px 2px 10px;
-    /*font-weight: bold;*/
-    margin-top: 15px;
-    margin-right: 5px;
+    font-weight: bold;
+    /*margin-top: 15px;*/
+    /*margin-right: 5px;*/
     line-height: 12px;
 }
 
@@ -91,17 +97,19 @@ strong{
 
 
 .cell-nav ul{
-    margin-top: 10px;
-    margin-left: 12px;
+    /*margin-top: 10px;*/
+    /*margin-left: 12px;*/
+    width: 100%;
+    margin: 0 auto;
     list-style-type: none;
         
 }
 
 .cell-nav ul li{
     display: inline-block;
-    padding-right: 10px;
+    padding-right: 2px;
     border-right: 1px solid #e2e2e2;
-    margin-right: 10px;
+    /*margin-right: 10px;*/
     
 }
 .cell-nav ul li a{
@@ -140,7 +148,7 @@ strong{
 
 .cell .center{
     margin: 10px auto;
-    width: 100px;
+    width: 135px;
     background-color: #fff;
     color: #333;
     text-shadow: 0px 1px 0px #fff;
@@ -160,3 +168,8 @@ strong{
     outline: none; 
 }
 
+.index-content{
+    margin: 0px 380px 0px 100px;
+    background-color: white;
+    min-height: 880px; 
+}

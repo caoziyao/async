@@ -1,60 +1,72 @@
-.box{
-    
+
+
+.detail-content{
+    width: 75%;
 }
 
-.hreader{
-    padding: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #e2e2e2;
-}
+    .hreader{
+         padding: 10px 30px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e2e2e2;
+        line-height: 50px;
+    }
 
-.sep20{
-    background-color: #e2e2e2;
-    height: 20px;
-}
 
-.fr{
-    float: right;
-}
+    .sep20{
+        /*background-color: #e2e2e2;*/
+        /*background:rgba(0,0,0,0.1);*/
+        height: 20px;
+    }
 
-small.gray a{
-    text-decoration-line: underline;
-}
+    .fr{
+        float: right;
+    }
 
-.cell{
-    padding: 10px;
-     border-bottom: 1px solid #e2e2e2;
-}
+    small.gray a{
+        text-decoration-line: underline;
+    }
 
-.comments{
-    /*height: 600px;*/
-    padding: 10px;
-}
 
-/*.comment-list{
-    height: 50px;
-    border-bottom: 1px solid #e2e2e2;
-}*/
+    .jq-html-content{
+        padding: 0 30px;
+    }
 
-.cell textarea{
-    width: 100%;
-    /*border: none;*/
-    maxlength: 100px;
-    font-family: 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
-}
+    .comments{
+        /*height: 600px;*/
+        padding: 10px;
+        background-color: white;
+    }
 
-.item-img{
-    float: left;
-}
+    .cell-comment{
+        padding: 10px;
+        background-color: white;
+    }
 
-.item-content{
-    float: left;
-    margin-left: 10px;
-    width: 90%;
-    /*width: 640px;*/
-}
+    /*.comment-list{
+        height: 50px;
+        border-bottom: 1px solid #e2e2e2;
+    }*/
 
-#wangEditor-comment{
-    width: 100%;
-    height: 300px;
-}
+    .cell textarea{
+        width: 100%;
+        /*border: none;*/
+        maxlength: 100px;
+        font-family: 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+    }
+
+    .item-img{
+        float: left;
+    }
+
+    .item-content{
+        float: left;
+        margin-left: 10px;
+        width: 90%;
+        /*width: 640px;*/
+    }
+
+    #wangEditor-comment{
+        width: 100%;
+        height: 300px;
+    }
+

@@ -1,1 +1,4 @@
-flask_migrate
+flask
+flask-migrate
+requests
+bs4

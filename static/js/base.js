@@ -48,7 +48,7 @@ $(document).ready(function(){
        // 更新时间戳
         // jQuery 遍历 - each() 方法
         $('stamp').each(function(){
-            var date = $(this).text()
+            var date = Number($(this).text())
             var stamp = dateDiff( date )
             $(this).text( stamp )
         })
