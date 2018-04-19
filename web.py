@@ -1,5 +1,9 @@
 # coding: utf-8
 
+class RequestHandler(object):
+
+    def __init__(self):
+        pass
 
 class _ApplicationRouter(object):
 
