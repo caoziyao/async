@@ -1,4 +1,0 @@
-flask
-flask-migrate
-requests
-bs4
