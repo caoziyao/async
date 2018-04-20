@@ -3,9 +3,12 @@ import selectors
 import select
 import sys
 
+"""
+核心的 I/O 循环
+"""
 
-class EventLoop(object):
-    # Constants from the epoll module
+class IOLoop(object):
+    # epoll 监听事件的宏定义
     _EPOLLIN = 0x001
     _EPOLLPRI = 0x002
     _EPOLLOUT = 0x004
@@ -33,6 +36,9 @@ class EventLoop(object):
 
     def add_handler(self, fd, handler, events):
         self.register_event(fd, handler)
+
+    def remove_handler(self, event):
+        self.unregister_event(event)
 
     # register
     def register_event(self, event, callback):

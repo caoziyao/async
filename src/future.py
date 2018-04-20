@@ -12,7 +12,7 @@ class Future(object):
     def set_result(self, result):
         self.result = result
         for fn in self._callbacks:
-            print('len of callback', len(self._callbacks))
+            print('len of callback', len(self._callbacks), fn)
             fn(self)
 
 

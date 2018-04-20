@@ -3,13 +3,13 @@
 # import time
 # import sys
 # import selectors
-# from event_loop import EventLoop
+# from event_loop import IOLoop
 # from future import Future
 #
 # class PyAsync(object):
 #
 #     def __init__(self):
-#         self.loop = EventLoop()
+#         self.loop = IOLoop()
 #         self.events_listen = [sys.stdin]
 #         self.flag = False
 #

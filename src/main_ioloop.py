@@ -4,15 +4,15 @@ import socket
 import select
 import sys
 import time
-from future import Future
-from task import Task
+from src.future import Future
+from src.task import Task
 from crawler import Crawler
-from task import Task
-from future import Future
-from ioloop import EventLoop
+from src.task import Task
+from src.future import Future
+from src.ioloop import IOLoop
 
 # pyasync = PyAsync()
-loop = EventLoop()
+loop = IOLoop()
 now = lambda: time.time()
 
 def late():
