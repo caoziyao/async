@@ -41,17 +41,36 @@ class IOLoop(object):
         self.unregister_event(event)
 
     # register
-    def register_event(self, event, callback):
-        self.events_to_listen.append(event)
-        self.callbacks[event] = callback
+    def register_event(self, event, callback,  flag=None):
+        if flag is None:
+            self.events_to_listen.append(event)
+            self.callbacks[event] = callback
+        else:
+            self.events_to_listen.append(event)
+            self.callbacks[flag] = callback
 
-    def unregister_event(self, event):
-        self.events_to_listen.remove(event)
-        del self.callbacks[event]
+    def unregister_event(self, event, flag=None):
+        if flag is None:
+            self.events_to_listen.remove(event)
+            del self.callbacks[event]
+        else:
+            self.events_to_listen.remove(event)
+            del self.callbacks[flag]
 
     def _process_events(self, events):
         for event in events:
-            self.callbacks[event](event)
+            if event == sys.stdin:
+                key = sys.stdin.readline()[0]
+                if key == 'a':
+                    print('a')
+                    self.callbacks[key](event)
+                elif key == 'b':
+                    print('b')
+                    self.callbacks[key](event)
+                else:
+                    print('key', key)
+            else:
+                self.callbacks[event](event)
 
     def start_loop(self):
         while True:

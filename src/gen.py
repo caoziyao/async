@@ -16,7 +16,9 @@ def coroutine(func):
     wrapped = func
     def wrapper(*args, **kwargs):
         result = func(*args, **kwargs)
+        print('id', *args, **kwargs)
         if isinstance(result, Generator):
+            print('new task')
             Task(result)
             # r = next(result)
         # else:
