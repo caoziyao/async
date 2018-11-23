@@ -50,7 +50,6 @@ class HelloWorldHandler(web.RequestHandler):
         # return r
 
 
-
 def stdin_test2(content):
     global flag
     loop = ioloop.IOLoop.instance()
@@ -92,7 +91,6 @@ class TestHandler(web.RequestHandler):
         # return r
 
 
-
 # class TestHandler(web.RequestHandler):
 #
 #     @gen.coroutine
@@ -118,4 +116,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

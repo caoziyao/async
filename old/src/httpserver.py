@@ -9,7 +9,7 @@ from src import iostream
 from src.test.httpclient_test import HelloWorldHandler
 
 """
-服务于 web 模块的一个非常简单的 HTTP 服务器的实现
+服务于 web 模块的一个简单的 HTTP 服务器的实现
 """
 
 class HTTPServer(object):
