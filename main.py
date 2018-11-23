@@ -8,10 +8,25 @@
 遇到 io 事件(轮询/中断)，切换上下文(进程/线程/协程)
 async 和 await， async 用于定义 coroutine，await 用于从 coroutine 返回。
 """
+import time
+from zyasynchttp.async_request import AsyncRequest
+from zyasynchttp.task import Task
+from zyasynchttp.event_loop import EventLoop
+
+now = lambda: time.time()
 
 
 def main():
-    pass
+    start = now()
+
+    request = AsyncRequest('www.baidu.com', '/', 80)
+    # task = Task(request.fetch())
+    coros = [request.fetch(), ]
+
+    loop = EventLoop()
+    loop.run_until_complete(coros)
+
+    print(now() - start)
 
 
 if __name__ == '__main__':
