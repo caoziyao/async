@@ -10,18 +10,20 @@ async 和 await， async 用于定义 coroutine，await 用于从 coroutine 返�
 """
 import time
 from zyasynchttp.async_request import AsyncRequest
-from zyasynchttp.task import Task
 from zyasynchttp.event_loop import EventLoop
 
 now = lambda: time.time()
+import asyncio
 
+@asyncio.coroutine
 
 def main():
     start = now()
 
     request = AsyncRequest('www.baidu.com', '/', 80)
+    r2 = AsyncRequest('www.qq.com', '/', 80)
     # task = Task(request.fetch())
-    coros = [request.fetch(), ]
+    coros = [request.fetch(), r2.fetch()]
 
     loop = EventLoop()
     loop.run_until_complete(coros)
